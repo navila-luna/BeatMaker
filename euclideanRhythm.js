@@ -1,12 +1,13 @@
 
+
 // const snare = new Tone.Player("audio/bright-punchy-snare-one-shot.wav").toMaster();
 const drum = new Tone.Player("audio/drumss.wav").toMaster();
 const guitarChords = new Tone.Player("audio/gtchord.wav").toMaster();
 const brightSnare = new Tone.Player("audio/brightSnare.wav").toMaster();
 const electricBass = new Tone.Player("audio/bassElectric.wav").toMaster();
-document.documentElement.addEventListener('mousedown', () => {
-    if (Tone.context.state !== 'running') Tone.context.resume();
-  });
+// document.documentElement.addEventListener('mousedown', () => {
+//     if (Tone.context.state !== 'running') Tone.context.resume();
+//   });
 
 function makeBeatSequence(ones, zeroes, beatSequence) {
   for(let i; i < n; i++) {
@@ -112,12 +113,33 @@ const guitar = makeRhythmPart(8, 3, guitarChords);
 const brightPitchSnare = randomSequence(brightSnare)
 const bassSynth = randomSequence(electricBass)
 
+// Button Functionality 
+let isPlaying = false;
+const btn = document.getElementById('playButton');
+
+function toggleBeat() {
+  if (isPlaying) {
+    stopBeat();
+    isPlaying = false;
+    btn.textContent = 'Play';
+  } else {
+    startBeat();
+    isPlaying = true;
+    btn.textContent = 'Stop';
+  }
+}
+
 function startBeat() {
-  Tone.start()
+  // Tone.start()
+  Tone.Transport.start()
   drumBeat.start();
   brightPitchSnare.start();
   bassSynth.start();
 }
-
-
-startBeat()
+function stopBeat() {
+  // Stop and reset all the necessary components
+  Tone.Transport.stop();
+  drumBeat.stop();
+  brightPitchSnare.stop();
+  bassSynth.stop();
+}

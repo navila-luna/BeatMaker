@@ -8,7 +8,7 @@ body {
 .h2 {
 
 }
-.playButton {
+#playButton {
     position: absolute;
     top: 80%;
     left: 50%;
