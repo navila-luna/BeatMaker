@@ -1,13 +1,7 @@
-
-
-// const snare = new Tone.Player("audio/bright-punchy-snare-one-shot.wav").toMaster();
 const drum = new Tone.Player("audio/drumss.wav").toMaster();
 const guitarChords = new Tone.Player("audio/gtchord.wav").toMaster();
 const brightSnare = new Tone.Player("audio/brightSnare.wav").toMaster();
 const electricBass = new Tone.Player("audio/bassElectric.wav").toMaster();
-// document.documentElement.addEventListener('mousedown', () => {
-//     if (Tone.context.state !== 'running') Tone.context.resume();
-//   });
 
 function makeBeatSequence(ones, zeroes, beatSequence) {
   for(let i; i < n; i++) {
@@ -70,9 +64,7 @@ function bjorklund(n, k) {
     curCount++;
   }
   pulseCounts.push(curCount);
-
   return pulseCounts;
-  // return flattened
 }
 
 console.log({b: bjorklund(13, 5)});
@@ -130,7 +122,6 @@ function toggleBeat() {
 }
 
 function startBeat() {
-  // Tone.start()
   Tone.Transport.start()
   drumBeat.start();
   brightPitchSnare.start();

@@ -3,21 +3,27 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-
 }
-.h2 {
 
-}
 #playButton {
     position: absolute;
     top: 80%;
     left: 50%;
-    background-color: rgba(220, 255, 255, 0.82);
-    color: black;
-    border: 2px solid #fff530; 
+    background: linear-gradient(135deg, #59dd87, #1a4dce);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
     width: 100px;
     height: 800x;
-}
+  }
+
+  #playButton:hover {
+    background: linear-gradient(135deg, #b7b7d9, #8ecb8e);
+  }
 .sequencer {
     text-align: center;
     margin-top: 4rem;
